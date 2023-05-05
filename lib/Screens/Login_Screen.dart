@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/utils/routes.dart';
 
 class LoginScreen extends StatelessWidget {
   //const ({ Key? key }) : super(key: key);
@@ -46,8 +47,9 @@ class LoginScreen extends StatelessWidget {
                     "Login",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
+                  style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                   onPressed: () {
-                    print("Login button pressed!!!");
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
                 )
               ],
