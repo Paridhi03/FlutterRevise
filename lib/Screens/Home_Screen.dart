@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/widgets/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   // To define numbers we have various datatypes in dart
@@ -27,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           child: Text("First Project to $name Flutter"),
         ),
       ),
-      drawer: Drawer()  ,
+      drawer: MyDrawer() ,
     );
   }
 }
