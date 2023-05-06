@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           child: Text("First Project to $name Flutter"),
         ),
       ),
-      drawer: MyDrawer() ,
+      drawer: MyDrawer(),
     );
   }
 }
