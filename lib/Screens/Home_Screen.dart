@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/models/catalog.dart';
 import 'package:flutter_app1/widgets/drawer.dart';
+import 'package:flutter_app1/widgets/item_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   // To define numbers we have various datatypes in dart
@@ -19,13 +21,30 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //DummyList can be used to test our UI
+    final dummyList = List.generate(5, ((index) => CatalogModel.items[0]));
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      body: Center(
-        child: Container(
-          child: Text("First Project to $name Flutter"),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          // //  Code for dummy List
+          // itemCount: dummyList.length,
+          // itemBuilder: (context, index) {
+          //   return ItemWidget(item: dummyList[index]);
+          // },
+
+          //itemCount tells number of tiles/items to be displayed
+          itemCount: CatalogModel.items.length,
+          //itemBuilder tells how the items should be displayed i.e. appearance. Here we have (index) which means the position of the item like w ehave in arrays. So we can use this to access the items.
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatalogModel.items[index],
+            );
+          },
         ),
       ),
       drawer: MyDrawer(),
